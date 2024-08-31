@@ -1,0 +1,14 @@
+# render.yaml
+services:
+  - type: web
+    name: minio-storage
+    env: docker
+    plan: free # Change to desired plan
+    build:
+      dockerfilePath: Dockerfile
+    startCommand: "minio server /data"
+    envVars:
+      - key: MINIO_ROOT_USER
+        value: <atomictos> # Replace with your MinIO access key
+      - key: MINIO_ROOT_PASSWORD
+        value: <amolt1431> # Replace with your MinIO secret key
